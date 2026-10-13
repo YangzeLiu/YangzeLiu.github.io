@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yangze Liu</title>
+<meta name="description" content="Yangze Liu, research assistant at Shandong University working on LLM-based agents.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1f2328;
+    --muted: #5b636e;
+    --link: #0b4fa8;
+    --rule: #e3e6ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15171a;
+      --text: #e4e6e9;
+      --muted: #9aa3ad;
+      --link: #7fb2f0;
+      --rule: #2c3036;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 20px 48px;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1 { font-size: 2rem; font-weight: 600; margin: 0 0 4px; }
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 40px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h3 { font-size: 0.95rem; font-weight: 600; color: var(--muted); margin: 20px 0 8px; }
+  .role { color: var(--muted); margin: 0 0 12px; }
+  .links { margin: 0; }
+  .links a + a::before { content: "·"; color: var(--muted); margin: 0 10px; }
+  p { margin: 0 0 12px; }
+  ol.pubs { list-style: none; margin: 0; padding: 0; }
+  ol.pubs li { margin: 0 0 14px; }
+  .title { font-weight: 600; }
+  .authors, .venue { display: block; }
+  .venue { color: var(--muted); }
+  .me { font-weight: 600; }
+  .tags a { margin-right: 10px; white-space: nowrap; }
+  ol.compact li { margin-bottom: 8px; }
+  ol.compact .title { font-weight: 400; }
+  ol.compact .authors { display: inline; color: var(--muted); }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.85rem; }
+  @media (max-width: 520px) {
+    main { padding: 32px 16px 40px; }
+    h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Yangze Liu</h1>
+  <p class="role">Full-time Research Assistant, School of Software, Shandong University</p>
+  <p class="links">
+    <a href="mailto:yangze.liu@outlook.com">yangze.liu@outlook.com</a><a href="Yangze_Liu_CV.pdf">CV</a><a href="https://github.com/YangzeLiu">GitHub</a>
+  </p>
+</header>
+
+<h2>About</h2>
+<p>I am a full-time research assistant at Shandong University, advised by Prof. Zhongyi Han. I received my B.S. in Computer Science + Philosophy from the University of Illinois Urbana-Champaign in 2025. I am applying to Ph.D. programs for Fall 2027.</p>
+<p>I study LLM-based agents, using controlled experiments to understand what actually drives their behavior and performance: where the knowledge in an agent's memory comes from, whether a model is coupled to its harness, whether a benchmark rewards the decisions it claims to test, and what goes wrong in an agent's actions even when it passes its task. I want to use this understanding to build better agents that can run safely in real environments. Earlier I worked on data selection for efficient training.</p>
+
+<h2>Publications</h2>
+<p class="venue">* Equal contribution.</p>
+
+<h3>Published and accepted</h3>
+<ol class="pubs">
+  <li>
+    <span class="title">Rethinking Dataset Quantization: Efficient Coreset Selection via Semantically-Aware Data Augmentation</span>
+    <span class="authors"><span class="me">Yangze Liu</span> and Hong Liu</span>
+    <span class="venue">Transactions on Machine Learning Research (TMLR), 2026</span>
+    <span class="tags"><a href="https://openreview.net/forum?id=Mb2nn1yx66">OpenReview</a><a href="https://github.com/YangzeLiu/DQ_v2">code</a></span>
+  </li>
+  <li>
+    <span class="title">OpenClawBench: Benchmarking Process-side Anomalies in Real-world Agent Execution Trajectories</span>
+    <span class="authors">Yibing Liu*, <span class="me">Yangze Liu</span>*, Xiaolong Yin, Bin Wang, Chong Zhang, Hao Yin, and Zhongyi Han</span>
+    <span class="venue">NeurIPS 2026, Evaluations &amp; Datasets Track (poster)</span>
+    <span class="tags"><a href="https://arxiv.org/abs/2605.29253">arXiv</a></span>
+  </li>
+</ol>
+
+<h3>Under review: LLM agents</h3>
+<ol class="pubs">
+  <li>
+    <span class="title">What Does a Harness Buy? Tokens, Mostly</span>
+    <span class="authors"><span class="me">Yangze Liu</span> and Zhongyi Han</span>
+    <span class="venue">Under review at ICLR 2027</span>
+    <span class="tags"><a href="https://arxiv.org/abs/2610.04433">arXiv</a><a href="https://github.com/YangzeLiu/what-does-a-harness-buy">code</a></span>
+  </li>
+  <li>
+    <span class="title">Experience Is Not Knowledge: Where the Decision Knowledge in an Agent's Memory Comes From</span>
+    <span class="authors"><span class="me">Yangze Liu</span> and Zhongyi Han</span>
+    <span class="venue">Under review at ICLR 2027</span>
+  </li>
+  <li>
+    <span class="title">Asking Earns Nothing: Scoring the Decision to Act in BFCL Multi-Turn</span>
+    <span class="authors"><span class="me">Yangze Liu</span> and Zhongyi Han</span>
+    <span class="venue">Under review at ICLR 2027</span>
+    <span class="tags"><a href="https://arxiv.org/abs/2610.04429">arXiv</a><a href="https://github.com/YangzeLiu/asking-earns-nothing">code</a></span>
+  </li>
+</ol>
+
+<h2>Other manuscripts</h2>
+<p class="venue">All under review at ICLR 2027.</p>
+
+<h3>Data selection</h3>
+<ol class="pubs compact">
+  <li><span class="title">Are Coreset Selection Methods Worth Their Cost?</span> <span class="authors"><span class="me">Y. Liu</span>, Z. Han.</span> <span class="tags"><a href="https://arxiv.org/abs/2609.22894">arXiv</a></span></li>
+  <li><span class="title">When Hard-Example Selection Fails: Gaussian Thresholds and Empirical Diagnostics</span> <span class="authors"><span class="me">Y. Liu</span>, Z. Han.</span></li>
+  <li><span class="title">What Does 5% Mean? The Coreset Regime Boundary Is Pinned in Samples per Class</span> <span class="authors"><span class="me">Y. Liu</span>, X.-L. Yin, Z. Han.</span></li>
+  <li><span class="title">Useful to Whom? The Easy-versus-Coverage Boundary Moves with the Learner</span> <span class="authors"><span class="me">Y. Liu</span>, X.-L. Yin, Z. Han.</span> <span class="tags"><a href="https://arxiv.org/abs/2610.00221">arXiv</a></span></li>
+</ol>
+
+<h3>Recursive training</h3>
+<ol class="pubs compact">
+  <li><span class="title">A Dominant Supplier Slows Recursive Drift More Than It Steers It</span> <span class="authors"><span class="me">Y. Liu</span>, Z. Han.</span> <span class="tags"><a href="https://arxiv.org/abs/2609.11146">arXiv</a></span></li>
+  <li><span class="title">Break Step: Recursive Training Resonates with Replayed Sampling Noise</span> <span class="authors"><span class="me">Y. Liu</span>, Z. Han.</span> <span class="tags"><a href="https://arxiv.org/abs/2609.11149">arXiv</a></span></li>
+</ol>
+
+<h2>Service</h2>
+<p>Reviewer, ICLR 2027</p>
+
+<footer>Last updated October 2026</footer>
+
+</main>
+</body>
+</html>
