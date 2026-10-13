@@ -62,7 +62,7 @@
             <li class="paper">
               <div class="paper-meta"><span class="venue">NeurIPS 2026</span><span>Evaluations &amp; Datasets Track · Poster</span></div>
               <h4><a href="https://arxiv.org/abs/2605.29253">OpenClawBench: Benchmarking Process-side Anomalies in Real-world Agent Execution Trajectories</a></h4>
-              <p class="authors">Yibing Liu*, <strong>Yangze Liu*</strong>, Xiaolong Yin, Bin Wang, Chong Zhang, Hao Yin, and Zhongyi Han</p>
+              <p class="authors">Yibing Liu*, <strong>Yangze Liu*</strong>, Xiaolong Yin, Bin Wang*, Chong Zhang, Hao Yin, and Zhongyi Han</p>
               <p class="paper-description">Can an agent pass its task and still act unsafely? OpenClawBench captures failures that a final task check misses, including unsafe external writes, ignored errors, and weakly grounded claims. I built the dataset and trained a detector that flags anomalies in execution trajectories.</p>
               <div class="paper-links"><a href="https://arxiv.org/abs/2605.29253" aria-label="Paper: OpenClawBench on arXiv">Paper <span aria-hidden="true">↗</span></a></div>
               <figure class="paper-figure">
@@ -76,7 +76,7 @@
               <div class="paper-meta"><span class="venue"><abbr title="Transactions on Machine Learning Research">TMLR</abbr> 2026</span><span>Data selection</span></div>
               <h4><a href="https://openreview.net/forum?id=Mb2nn1yx66">Rethinking Dataset Quantization: Efficient Coreset Selection via Semantically-Aware Data Augmentation</a></h4>
               <p class="authors"><strong>Yangze Liu</strong> and Hong Liu</p>
-              <p class="paper-description">Can coreset selection keep accuracy while lowering cost? Our method matches or exceeds prior methods on ImageNet-1k and fine-grained datasets at lower cost. It shares one randomly initialized network across semantically aware augmentation, selection, and training.</p>
+              <p class="paper-description">Does coreset selection need a large pretrained model? Dataset Quantization relies on one and augments data only after selecting it, so selection and training see different data. Our method finds objects for semantically aware augmentation with a randomly initialized CNN and augments before selecting. It is competitive with or better than prior methods on ImageNet-1k and fine-grained datasets, at lower cost than the original method.</p>
               <div class="paper-links">
                 <a href="https://openreview.net/forum?id=Mb2nn1yx66" aria-label="Paper: Rethinking Dataset Quantization on OpenReview">Paper <span aria-hidden="true">↗</span></a>
                 <a href="https://github.com/YangzeLiu/DQ_v2" aria-label="Code for Rethinking Dataset Quantization">Code <span aria-hidden="true">↗</span></a>
@@ -118,7 +118,7 @@
             <li class="paper">
               <h4><a href="https://arxiv.org/abs/2610.04429">Asking Earns Nothing: Scoring the Decision to Act in BFCL Multi-Turn</a></h4>
               <p class="authors"><strong>Yangze Liu</strong> and Zhongyi Han</p>
-              <p class="paper-description">Does a tool-use benchmark reward an agent for asking when information is missing? BFCL multi-turn skips the very turn where it should ask. A one-line prompt pushing the agent toward action raised official scores by 13.5–23.5 points with no detectable change in its decisions, measured using the benchmark’s own paired complete and incomplete requests.</p>
+              <p class="paper-description">Does a tool-use benchmark reward an agent for asking when information is missing? BFCL multi-turn skips the very turn where it should ask. A one-line prompt pushing the agent toward action raised official scores by 13.5–23.5 points with no detectable change in its decision accuracy, measured using the benchmark’s own paired complete and incomplete requests.</p>
               <div class="paper-links">
                 <a href="https://arxiv.org/abs/2610.04429" aria-label="Paper: Asking Earns Nothing on arXiv">Paper <span aria-hidden="true">↗</span></a>
                 <a href="https://github.com/YangzeLiu/asking-earns-nothing" aria-label="Code for Asking Earns Nothing">Code <span aria-hidden="true">↗</span></a>
