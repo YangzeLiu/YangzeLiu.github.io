@@ -51,6 +51,7 @@
           <h1 id="name">Yangze Liu</h1>
           <p class="affiliation">Full-time Research Assistant<br><strong>Shandong University</strong></p>
           <p class="advisor">Advised by Prof. Zhongyi Han</p>
+          <p class="advisor">B.S., Computer Science + Philosophy, UIUC, 2025<br>Applying for PhD study in Fall 2027</p>
           <a class="email" href="mailto:yangze.liu@outlook.com">yangze.liu@outlook.com</a>
           <div class="profile-links">
             <a class="cv-link" href="Yangze_Liu_CV.pdf">CV <span class="file-type">PDF</span> <span aria-hidden="true">↗</span></a>
@@ -110,7 +111,7 @@
             <li class="paper">
               <h4><a href="https://arxiv.org/abs/2610.04433">What Does a Harness Buy? Tokens, Mostly.</a></h4>
               <p class="authors"><strong>Yangze Liu</strong> and Zhongyi Han</p>
-              <p class="paper-description">Does changing a coding agent’s harness improve its performance? In our comparison, the only harness effect that cleared run-to-run noise was a loss, while cost varied by up to 3× per task for the same model. On a hard subset of SWE-bench Verified, changing harnesses flipped as many tasks as rerunning the same one.</p>
+              <p class="paper-description">Does changing a coding agent’s harness improve its performance? On the larger task pool tested with two models, the only harness effect that cleared run-to-run noise was a loss. Cost varied by up to 3× per task for the same model. On a hard subset of SWE-bench Verified, changing harnesses flipped as many tasks as rerunning the same one.</p>
               <div class="paper-links">
                 <a href="https://arxiv.org/abs/2610.04433" aria-label="Paper: What Does a Harness Buy on arXiv">Paper <span aria-hidden="true">↗</span></a>
                 <a href="https://github.com/YangzeLiu/what-does-a-harness-buy" aria-label="Code for What Does a Harness Buy">Code <span aria-hidden="true">↗</span></a>
@@ -125,7 +126,7 @@
             <li class="paper">
               <h4>Experience Is Not Knowledge: Where the Decision Knowledge in an Agent’s Memory Comes From</h4>
               <p class="authors"><strong>Yangze Liu</strong> and Zhongyi Han</p>
-              <p class="paper-description">Does writing down experience give an agent useful knowledge? In Slay the Spire, self-written memory did not improve clear rate, while correct rules from simulator statistics or a stronger model did. Replay at shared decision states showed why memory quality matters: the agent used its own memory, and a wrong rule it learned became a new error.</p>
+              <p class="paper-description">Does writing down experience give an agent useful knowledge? In Slay the Spire, self-written memory showed no detectable improvement in clear rate. Simulator-statistics and stronger-model-prior memories had higher observed clear rates than the no-memory baseline. The teacher-memory gain survived multiple-comparison correction. Replay at shared decision states showed that the agent acted on its memory. Later games showed that a mistaken rule became a new error.</p>
               <figure class="paper-figure">
                 <a class="figure-link" href="assets/figures/memory.webp">
                   <img src="assets/figures/memory.webp" width="1440" height="490" loading="lazy" decoding="async" alt="Clear rates by memory source for three Slay the Spire agents. Self-written memory stays near the no-memory baseline, while teacher-written memory has the highest clear rate for each agent. Error bars show uncertainty.">
@@ -136,7 +137,7 @@
             <li class="paper">
               <h4><a href="https://arxiv.org/abs/2610.04429">Asking Earns Nothing: Scoring the Decision to Act in BFCL Multi-Turn</a></h4>
               <p class="authors"><strong>Yangze Liu</strong> and Zhongyi Han</p>
-              <p class="paper-description">Does a tool-use benchmark reward an agent for asking when information is missing? BFCL multi-turn skips the very turn where it should ask. A one-line prompt pushing the agent toward action raised official scores by 13.5–23.5 points with no detectable change in its decision accuracy, measured using the benchmark’s own paired complete and incomplete requests.</p>
+              <p class="paper-description">Does a tool-use benchmark reward an agent for asking when information is missing? BFCL multi-turn skips the very turn where it should ask. A one-line prompt pushing the agent toward action raised official scores on the two should-ask categories and their base twins by 13.5–23.5 percentage points with no detectable change in its decision accuracy, measured using the benchmark’s own paired complete and incomplete requests.</p>
               <div class="paper-links">
                 <a href="https://arxiv.org/abs/2610.04429" aria-label="Paper: Asking Earns Nothing on arXiv">Paper <span aria-hidden="true">↗</span></a>
                 <a href="https://github.com/YangzeLiu/asking-earns-nothing" aria-label="Code for Asking Earns Nothing">Code <span aria-hidden="true">↗</span></a>
@@ -153,7 +154,8 @@
           <aside class="research-note" aria-labelledby="audit-heading">
             <p class="eyebrow">Also in my research</p>
             <h3 id="audit-heading">Auditing public agent leaderboards</h3>
-            <p>Can leaderboard rankings change simply because some episodes go ungraded? In one τ-bench Airline result, only 39% of episodes were graded. Grading them all reordered the scaffolds for six of ten models. I reported four reproducible scoring and cost-accounting faults across HAL, τ-bench, and τ²-bench. HAL’s maintainers confirmed three and added disclosures.</p>
+            <p>Can leaderboard rankings change simply because some episodes go ungraded? In one τ-bench Airline result, only 39% of episodes in the auditable subset were graded. Regrading all episodes in that subset reordered the scaffolds for six of ten models covered by at least two scaffolds. I reported four reproducible scoring and cost-accounting faults across HAL, τ-bench, and τ²-bench. HAL’s maintainers confirmed three and added disclosures.</p>
+            <div class="paper-links"><a href="https://github.com/YangzeLiu/eval-instrument-disclosure">Report &amp; reproduction <span aria-hidden="true">↗</span></a></div>
           </aside>
 
           <details class="other-manuscripts">
