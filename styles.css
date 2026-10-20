@@ -146,10 +146,9 @@ details[open] .expand-icon::after { transform: none; }
 .compact-papers { margin-bottom: 30px; }
 .compact-papers li { padding-bottom: 24px; }
 .compact-papers li + li { padding-top: 24px; border-top: 1px solid var(--rule); }
-.compact-papers .paper-figure { max-width: 600px; margin-top: 12px; }
+.compact-papers .paper-figure { margin-top: 12px; }
 /* Constrain tall previews with width, so intrinsic aspect ratios reserve space. */
-.compact-papers img[src$="coreset-cost.webp"] { max-width: 360px; margin-inline: auto; }
-.compact-papers img[src$="samples-per-class.webp"] { max-width: 400px; margin-inline: auto; }
+.compact-papers img[src$="coreset-cost.webp"] { max-width: 440px; margin-inline: auto; }
 .compact-papers h4 { font-size: 1rem; font-weight: 600; line-height: 1.5; text-wrap: pretty; }
 .compact-papers p { display: inline; font-size: 0.875rem; color: var(--muted); }
 .compact-papers li > a { display: inline-flex; align-items: center; gap: 5px; min-height: 36px; margin-left: 12px; font-size: 0.875rem; }
