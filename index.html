@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Yangze Liu — LLM Agents</title>
-  <meta name="description" content="Yangze Liu studies what drives LLM agents’ behavior and how to build agents that run safely in real environments. Research assistant at Shandong University.">
+  <title>Yangze Liu · LLM Agents</title>
+  <meta name="description" content="Yangze Liu studies what drives LLM agents’ behavior, so that we can build agents that act safely in real environments. Research assistant at Shandong University, applying to PhD programs for Fall 2027.">
   <link rel="canonical" href="https://yangzeliu.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Yangze Liu">
-  <meta property="og:title" content="Yangze Liu — LLM Agents">
-  <meta property="og:description" content="Yangze Liu studies what drives LLM agents’ behavior and how to build agents that run safely in real environments. Research assistant at Shandong University.">
+  <meta property="og:title" content="Yangze Liu · LLM Agents">
+  <meta property="og:description" content="Yangze Liu studies what drives LLM agents’ behavior, so that we can build agents that act safely in real environments. Research assistant at Shandong University, applying to PhD programs for Fall 2027.">
   <meta property="og:url" content="https://yangzeliu.github.io/">
   <meta property="og:image" content="https://yangzeliu.github.io/assets/social-preview.png">
   <meta property="og:image:type" content="image/png">
@@ -19,14 +19,17 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Yangze Liu. Full-time Research Assistant, Shandong University. Understanding what drives LLM agents.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Yangze Liu — LLM Agents">
-  <meta name="twitter:description" content="Yangze Liu studies what drives LLM agents’ behavior and how to build agents that run safely in real environments. Research assistant at Shandong University.">
+  <meta name="twitter:title" content="Yangze Liu · LLM Agents">
+  <meta name="twitter:description" content="Yangze Liu studies what drives LLM agents’ behavior, so that we can build agents that act safely in real environments. Research assistant at Shandong University, applying to PhD programs for Fall 2027.">
   <meta name="twitter:image" content="https://yangzeliu.github.io/assets/social-preview.png">
   <meta name="twitter:image:alt" content="Yangze Liu. Full-time Research Assistant, Shandong University. Understanding what drives LLM agents.">
   <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
-  <link rel="stylesheet" href="styles.css?v=20261020">
-  <script src="theme.js?v=20261020"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="styles.css?v=20261103">
+  <script src="theme.js?v=20261103"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -37,6 +40,7 @@
       <nav aria-label="Main navigation">
         <a href="#research">Research</a>
         <a href="#background">Background</a>
+        <a href="#contact">Contact</a>
         <a href="Yangze_Liu_CV.pdf">CV <span aria-hidden="true">↗</span></a>
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" hidden>
           <svg class="moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.3 15.2A8.7 8.7 0 0 1 8.8 3.7 8.7 8.7 0 1 0 20.3 15.2Z"/></svg>
@@ -46,12 +50,15 @@
     </header>
 
     <main id="main" tabindex="-1">
+
+      <!-- Opening spread: who, where, and the one-sentence argument. -->
       <section class="intro" aria-labelledby="name">
-        <div class="identity">
+        <div class="identity" id="contact">
           <h1 id="name">Yangze Liu</h1>
           <p class="affiliation">Full-time Research Assistant<br><strong>Shandong University</strong></p>
-          <p class="advisor">Advised by Prof. Zhongyi Han</p>
-          <p class="advisor">B.S., Computer Science + Philosophy<br>UIUC, 2025<br>Applying for PhD study in Fall 2027</p>
+          <p class="detail">Advised by Prof. Zhongyi Han</p>
+          <p class="detail">B.S. Computer Science + Philosophy<br>University of Illinois Urbana-Champaign, 2025</p>
+          <p class="applying">Applying to PhD programs for Fall 2027</p>
           <a class="email" href="mailto:yangze.liu@outlook.com">yangze.liu@outlook.com</a>
           <div class="profile-links">
             <a class="cv-link" href="Yangze_Liu_CV.pdf">CV <span class="file-type">PDF</span> <span aria-hidden="true">↗</span></a>
@@ -59,105 +66,155 @@
             <a href="https://scholar.google.com/citations?user=J5UjM7EAAAAJ">Scholar <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="research-intro">
-          <p class="eyebrow">Research focus</p>
-          <p class="research-statement">Understanding what<br class="desktop-break"> drives <em>LLM agents.</em></p>
-          <p>I study what drives LLM agents’ behavior: where the knowledge in their memory comes from, how a harness shapes performance, and why successful agents can still act unsafely.</p>
-          <p>My goal is to build better agents that can run safely in real environments. Earlier, I worked on data selection for efficient training.</p>
+
+        <div class="thesis">
+          <p class="eyebrow">What I work on</p>
+          <p class="thesis-statement">When an agent’s score goes up, what actually <em>changed</em>?</p>
+          <p>A score can rise because the agent got better, or because of run-to-run noise and grading rules that have nothing to do with the agent. I use controlled experiments to tell these apart, then look for the mechanism behind the change that is real, so that we can build agents that act safely in real environments.</p>
         </div>
+      </section>
+
+      <!-- The five agent papers as five questions. Top row: is the measured change real. Bottom row: what drives the behavior. -->
+      <section class="questions" aria-labelledby="questions-heading">
+        <h2 id="questions-heading" class="questions-heading">Five questions, one line of work</h2>
+        <ol class="question-grid" role="list">
+            <li class="question">
+              <a href="#paper-harness">
+                <span class="question-step">Harness</span>
+                <span class="question-text">A new harness raises a coding agent’s pass rate. Is the gain any larger than rerunning the same setup?</span>
+                <span class="question-paper">What Does a Harness Buy? <span class="status">Under review, ICLR 2027</span></span>
+              </a>
+            </li>
+            <li class="question">
+              <a href="#paper-leaderboards">
+                <span class="question-step">Leaderboards</span>
+                <span class="question-text">One agent trails another by 13 points on a public leaderboard. Is the gap in the agent or in the grader?</span>
+                <span class="question-paper">Silent Instrument Errors <span class="status">arXiv preprint, 2026</span></span>
+              </a>
+            </li>
+            <li class="question">
+              <a href="#paper-openclawbench">
+                <span class="question-step">Process</span>
+                <span class="question-text">An agent passes its task. Did it act safely along the way?</span>
+                <span class="question-paper">OpenClawBench <span class="status status--accepted">NeurIPS 2026, poster</span></span>
+              </a>
+            </li>
+            <li class="question">
+              <a href="#paper-memory">
+                <span class="question-step">Memory</span>
+                <span class="question-text">An agent writes itself a memory from its own games. Does the useful knowledge in it come from the games, or from the model that wrote it?</span>
+                <span class="question-paper">Experience Is Not Knowledge <span class="status">Manuscript, 2026</span></span>
+              </a>
+            </li>
+            <li class="question">
+              <a href="#paper-asking">
+                <span class="question-step">Asking</span>
+                <span class="question-text">A one-line prompt raises an agent’s leaderboard score. Did its decisions get any better?</span>
+                <span class="question-paper">Asking Earns Nothing <span class="status">Under review, ICLR 2027</span></span>
+              </a>
+            </li>
+        </ol>
       </section>
 
       <section class="section-grid" id="research" aria-labelledby="research-heading">
         <div class="section-heading">
           <p class="eyebrow"><span class="section-number" aria-hidden="true">01</span> Research</p>
-          <h2 id="research-heading">Selected work</h2>
-          <p>Agent behavior and safety.<br> Earlier work on efficient training.</p>
+          <h2 id="research-heading">The papers</h2>
+          <p>Five on LLM agents, in the order of the questions above, and one earlier paper on efficient training.</p>
           <p class="contribution-note">* Equal contribution</p>
         </div>
 
         <div class="section-content">
-          <h3 class="group-heading">Published &amp; accepted</h3>
           <ol class="paper-list" role="list">
-            <li class="paper">
-              <div class="paper-meta"><span class="venue">NeurIPS 2026</span><span>Evaluations &amp; Datasets Track · Poster</span></div>
-              <h4><a href="https://arxiv.org/abs/2605.29253">OpenClawBench: Benchmarking Process-side Anomalies in Real-world Agent Execution Trajectories</a></h4>
-              <p class="authors">Yibing Liu*, <strong>Yangze Liu*</strong>, Xiaolong Yin, Bin Wang, Chong Zhang, Hao Yin, and Zhongyi Han</p>
-              <p class="paper-description">Can an agent pass its task and still act unsafely? OpenClawBench captures failures that a final task check misses, including unsafe external writes, ignored errors, and weakly grounded claims. I built the dataset and trained a detector that flags anomalies in execution trajectories.</p>
-              <div class="paper-links"><a href="https://arxiv.org/abs/2605.29253" aria-label="Paper: OpenClawBench on arXiv">Paper <span aria-hidden="true">↗</span></a></div>
-              <figure class="paper-figure">
-                <a class="figure-link" href="assets/figures/openclawbench.webp">
-                  <img src="assets/figures/openclawbench.webp" width="2400" height="931" loading="lazy" decoding="async" alt="OpenClawBench pipeline linking agent execution traces to process anomaly labels. The outcome–process gap panel shows that passing a task can coexist with process anomalies.">
-                </a>
-                <figcaption><span>Task outcomes and process reliability in OpenClawBench.</span><a href="assets/figures/openclawbench.webp" aria-label="View full-size figure: OpenClawBench">View figure <span aria-hidden="true">↗</span></a></figcaption>
-              </figure>
-            </li>
-            <li class="paper">
-              <div class="paper-meta"><span class="venue"><abbr title="Transactions on Machine Learning Research">TMLR</abbr> 2026</span><span>Data selection</span></div>
-              <h4><a href="https://openreview.net/forum?id=Mb2nn1yx66">Rethinking Dataset Quantization: Efficient Coreset Selection via Semantically-Aware Data Augmentation</a></h4>
-              <p class="authors"><strong>Yangze Liu</strong> and Hong Liu</p>
-              <p class="paper-description">Does coreset selection need a large pretrained model? Dataset Quantization relies on one and augments data only after selecting it, so selection and training see different data. Our method finds objects for semantically aware augmentation with a randomly initialized CNN and augments before selecting. It is competitive with or better than prior methods on ImageNet-1k and fine-grained datasets, at lower cost than the original method.</p>
-              <div class="paper-links">
-                <a href="https://openreview.net/forum?id=Mb2nn1yx66" aria-label="Paper: Rethinking Dataset Quantization on OpenReview">Paper <span aria-hidden="true">↗</span></a>
-                <a href="https://github.com/YangzeLiu/DQ_v2" aria-label="Code for Rethinking Dataset Quantization">Code <span aria-hidden="true">↗</span></a>
-              </div>
-            </li>
-          </ol>
 
-          <div class="group-header">
-            <h3 class="group-heading">Under review · LLM agents</h3>
-            <p>All under review at ICLR 2027</p>
-          </div>
-          <ol class="paper-list" role="list">
-            <li class="paper">
-              <h4><a href="https://arxiv.org/abs/2610.04433">What Does a Harness Buy? Tokens, Mostly.</a></h4>
+            <li class="paper" id="paper-harness">
+              <div class="paper-meta"><span class="paper-step">Harness</span><span class="status">Under review at ICLR 2027</span></div>
+              <h3><a href="https://arxiv.org/abs/2610.04433">What Does a Harness Buy? Tokens, Mostly.</a></h3>
               <p class="authors"><strong>Yangze Liu</strong> and Zhongyi Han</p>
-              <p class="paper-description">Does changing a coding agent’s harness improve its performance? On the larger task pool tested with two models, the only harness effect that cleared run-to-run noise was a loss. Cost varied by up to 3× per task for the same model. On a hard subset of SWE-bench Verified, changing harnesses flipped as many tasks as rerunning the same one.</p>
+              <p class="paper-description">Coding-agent harnesses ship new releases constantly and are credited with pass-rate gains. Does the same model actually do better in a different harness? With same-configuration reruns as the noise floor, swapping harnesses on a hard subset of SWE-bench Verified flipped as many task outcomes as rerunning the same harness, across five models. On the larger task pool, tested with two models, the only harness effect that cleared the noise was a loss. What the harness did decide was cost, up to three times per task for the same model.</p>
               <div class="paper-links">
-                <a href="https://arxiv.org/abs/2610.04433" aria-label="Paper: What Does a Harness Buy on arXiv">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://arxiv.org/abs/2610.04433" aria-label="Paper: What Does a Harness Buy on arXiv">arXiv:2610.04433 <span aria-hidden="true">↗</span></a>
                 <a href="https://github.com/YangzeLiu/what-does-a-harness-buy" aria-label="Code for What Does a Harness Buy">Code <span aria-hidden="true">↗</span></a>
               </div>
               <figure class="paper-figure">
                 <a class="figure-link" href="assets/figures/harness.webp">
                   <img src="assets/figures/harness.webp" width="1440" height="749" loading="lazy" decoding="async" alt="Two panels compare the same models across coding harnesses: input tokens versus pass rate, and paired pass-rate differences with uncertainty and rerun ranges. The differences that clear the noise show OpenCode trailing.">
                 </a>
-                <figcaption><span>Token use and pass rate (left); harness differences and reruns (right).</span><a href="assets/figures/harness.webp" aria-label="View full-size figure: What Does a Harness Buy?">View figure <span aria-hidden="true">↗</span></a></figcaption>
+                <figcaption><span>Left, input tokens against pass rate. Right, paired harness differences against the rerun noise band.</span><a href="assets/figures/harness.webp" aria-label="View full-size figure: What Does a Harness Buy?">View figure <span aria-hidden="true">↗</span></a></figcaption>
               </figure>
             </li>
-            <li class="paper">
-              <h4>Experience Is Not Knowledge: Where the Decision Knowledge in an Agent’s Memory Comes From</h4>
+
+            <li class="paper" id="paper-leaderboards">
+              <div class="paper-meta"><span class="paper-step">Leaderboards</span><span class="status">arXiv preprint, 2026</span></div>
+              <h3><a href="https://arxiv.org/abs/2611.04399">Silent Instrument Errors Reorder Agent Leaderboards</a></h3>
+              <p class="authors"><strong>Yangze Liu</strong></p>
+              <p class="paper-description">Can a leaderboard gap come from the grader rather than the agent? On HAL’s τ-bench Airline leaderboard, a general-purpose agent trails a scaffold built for that benchmark by 13 points on the tasks that touch its database, but only about half of its episodes were ever graded and the rest were stored as failures. Grading them under the benchmark’s own rule closes the gap without rerunning any agent. An audit of HAL and τ²-bench from their published artifacts found three more errors of this kind, and HAL’s maintainers confirmed three of the four and added disclosures. The code that grades, logs and replays an evaluation is part of the measurement, and when it fails, scores and rankings move with no visible sign.</p>
+              <div class="paper-links">
+                <a href="https://arxiv.org/abs/2611.04399" aria-label="Paper: Silent Instrument Errors on arXiv">arXiv:2611.04399 <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/YangzeLiu/eval-instrument-disclosure" aria-label="Report and reproduction for Silent Instrument Errors">Report &amp; reproduction <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
+
+            <li class="paper" id="paper-openclawbench">
+              <div class="paper-meta"><span class="paper-step">Process</span><span class="status status--accepted">NeurIPS 2026 · Evaluations &amp; Datasets Track · Poster</span></div>
+              <h3><a href="https://arxiv.org/abs/2605.29253">OpenClawBench: Benchmarking Process-side Anomalies in Real-world Agent Execution Trajectories</a></h3>
+              <p class="authors">Yibing Liu*, <strong>Yangze Liu*</strong>, Xiaolong Yin, Bin Wang, Chong Zhang, Hao Yin, and Zhongyi Han</p>
+              <p class="paper-description">Can an agent pass its final task check and still have acted badly along the way? OpenClawBench is a benchmark of process-side anomalies in real agent execution trajectories: executions that pass the check but ignore errors, make unsafe external writes, or commit to weakly grounded claims. I built the 31,264-trajectory dataset from generation through cleaning and trained its trajectory-level anomaly detector, a LoRA-fine-tuned open model.</p>
+              <div class="paper-links"><a href="https://arxiv.org/abs/2605.29253" aria-label="Paper: OpenClawBench on arXiv">arXiv:2605.29253 <span aria-hidden="true">↗</span></a></div>
+              <figure class="paper-figure">
+                <a class="figure-link" href="assets/figures/openclawbench.webp">
+                  <img src="assets/figures/openclawbench.webp" width="2400" height="931" loading="lazy" decoding="async" alt="OpenClawBench pipeline linking agent execution traces to process anomaly labels. The outcome–process gap panel shows that passing a task can coexist with process anomalies.">
+                </a>
+                <figcaption><span>From real agent sessions to process-anomaly labels. Passing the task does not guarantee a clean process.</span><a href="assets/figures/openclawbench.webp" aria-label="View full-size figure: OpenClawBench">View figure <span aria-hidden="true">↗</span></a></figcaption>
+              </figure>
+            </li>
+
+            <li class="paper" id="paper-memory">
+              <div class="paper-meta"><span class="paper-step">Memory</span><span class="status">Manuscript, 2026</span></div>
+              <h3>Experience Is Not Knowledge: Where the Decision Knowledge in an Agent’s Memory Comes From</h3>
               <p class="authors"><strong>Yangze Liu</strong> and Zhongyi Han</p>
-              <p class="paper-description">Does writing down experience give an agent useful knowledge? In Slay the Spire, self-written memory showed no detectable improvement in clear rate. Memories written from simulator statistics or from a stronger model’s prior knowledge had higher observed clear rates than the no-memory baseline. A teacher memory, in which a stronger model read the agent’s own games, gave the one gain that survived multiple-comparison correction. Replay at shared decision states showed that the agent acted on its memory. Later games showed that a mistaken rule became a new error.</p>
+              <p class="paper-description">Agents are often improved by writing a memory from their own trajectories, and the gain is credited to experience. Such a memory also carries what the writer already knew, so where does the useful part come from? In a Slay the Spire testbed that varies only the source of the memory, the agent’s self-written memory gave no detectable improvement in clear rate. A teacher memory, in which a stronger model read the agent’s own games, gave the one gain that survived multiple-comparison correction. Replay at shared decision states showed the agent acting on its own memory, and a wrong rule it drew from its own games became a new error.</p>
               <figure class="paper-figure">
                 <a class="figure-link" href="assets/figures/memory.webp">
                   <img src="assets/figures/memory.webp" width="1440" height="490" loading="lazy" decoding="async" alt="Clear rates by memory source for three Slay the Spire agents. Self-written memory stays near the no-memory baseline, while teacher-written memory has the highest clear rate for each agent. Error bars show uncertainty.">
                 </a>
-                <figcaption><span>Game clear rates with different sources of memory.</span><a href="assets/figures/memory.webp" aria-label="View full-size figure: Experience Is Not Knowledge">View figure <span aria-hidden="true">↗</span></a></figcaption>
+                <figcaption><span>Clear rate by source of memory, for three agents.</span><a href="assets/figures/memory.webp" aria-label="View full-size figure: Experience Is Not Knowledge">View figure <span aria-hidden="true">↗</span></a></figcaption>
               </figure>
             </li>
-            <li class="paper">
-              <h4><a href="https://arxiv.org/abs/2610.04429">Asking Earns Nothing: Scoring the Decision to Act in BFCL Multi-Turn</a></h4>
+
+            <li class="paper" id="paper-asking">
+              <div class="paper-meta"><span class="paper-step">Asking</span><span class="status">Under review at ICLR 2027</span></div>
+              <h3><a href="https://arxiv.org/abs/2610.04429">Asking Earns Nothing: Scoring the Decision to Act in BFCL Multi-Turn</a></h3>
               <p class="authors"><strong>Yangze Liu</strong> and Zhongyi Han</p>
-              <p class="paper-description">Does a tool-use benchmark reward an agent for asking when information is missing? BFCL multi-turn skips the very turn where it should ask. A one-line prompt pushing the agent toward action raised official scores on the two should-ask categories and their base twins by 13.5–23.5 percentage points with no detectable change in its decision accuracy, measured using the benchmark’s own paired complete and incomplete requests.</p>
+              <p class="paper-description">An agent that lacks the information it needs should ask rather than act. BFCL multi-turn builds two of its four categories around that decision, yet its scorer skips the very turn on which the agent should ask, so asking earns no credit. A judge-free decision metric, built from the benchmark’s own paired complete and incomplete requests, shows what the official score misses. A one-line prompt pushing an agent toward action raised official scores on the two should-ask categories and their base twins by 13.5 to 23.5 percentage points with no detectable change in its decision accuracy, and the model that decided best ranked sixth of seven tested models under official scoring on the same items.</p>
               <div class="paper-links">
-                <a href="https://arxiv.org/abs/2610.04429" aria-label="Paper: Asking Earns Nothing on arXiv">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://arxiv.org/abs/2610.04429" aria-label="Paper: Asking Earns Nothing on arXiv">arXiv:2610.04429 <span aria-hidden="true">↗</span></a>
                 <a href="https://github.com/YangzeLiu/asking-earns-nothing" aria-label="Code for Asking Earns Nothing">Code <span aria-hidden="true">↗</span></a>
               </div>
               <figure class="paper-figure">
                 <a class="figure-link" href="assets/figures/asking.webp">
                   <img src="assets/figures/asking.webp" width="1440" height="558" loading="lazy" decoding="async" alt="A BFCL example depicts a request to buy shares without naming the stock. The scorer ignores the clarification turn. The adjacent chart shows that official scores and action-decision scores rank models differently.">
                 </a>
-                <figcaption><span>The skipped clarification turn and the resulting ranking reversal.</span><a href="assets/figures/asking.webp" aria-label="View full-size figure: Asking Earns Nothing">View figure <span aria-hidden="true">↗</span></a></figcaption>
+                <figcaption><span>The skipped clarification turn, and the ranking that changes once the decision itself is scored.</span><a href="assets/figures/asking.webp" aria-label="View full-size figure: Asking Earns Nothing">View figure <span aria-hidden="true">↗</span></a></figcaption>
               </figure>
             </li>
           </ol>
 
-          <aside class="research-note" aria-labelledby="audit-heading">
-            <p class="eyebrow">Auditing public agent leaderboards · arXiv 2026</p>
-            <h3 id="audit-heading"><a href="https://arxiv.org/abs/2611.04399">Silent Instrument Errors Reorder Agent Leaderboards</a></h3>
-            <p class="authors"><strong>Yangze Liu</strong></p>
-            <p>Can a leaderboard gap come from the grader rather than the agent? In one τ-bench Airline result, nearly half of one agent’s episodes ended without being graded and were stored as failures. Grading them closes its 13-point gap to the task-specific scaffold. I reported four reproducible scoring and cost-accounting faults across HAL, τ-bench, and τ²-bench. HAL’s maintainers confirmed three and added disclosures.</p>
-            <div class="paper-links"><a href="https://arxiv.org/abs/2611.04399" aria-label="Paper: Silent Instrument Errors on arXiv">arXiv:2611.04399 <span aria-hidden="true">↗</span></a><a href="https://github.com/YangzeLiu/eval-instrument-disclosure">Report &amp; reproduction <span aria-hidden="true">↗</span></a></div>
-          </aside>
+          <div class="group-header">
+            <h3 class="group-heading">Earlier work: efficient training</h3>
+          </div>
+          <ol class="paper-list" role="list">
+            <li class="paper paper--compact" id="paper-dq">
+              <div class="paper-meta"><span class="status status--accepted"><abbr title="Transactions on Machine Learning Research">TMLR</abbr> 2026</span></div>
+              <h3><a href="https://openreview.net/forum?id=Mb2nn1yx66">Rethinking Dataset Quantization: Efficient Coreset Selection via Semantically-Aware Data Augmentation</a></h3>
+              <p class="authors"><strong>Yangze Liu</strong> and Hong Liu</p>
+              <p class="paper-description">Does coreset selection need a large pretrained model? Dataset Quantization relies on one and augments data only after selecting it, so selection and training see different data. Our version finds objects for semantically aware augmentation with a randomly initialized CNN and augments before selecting. It is competitive with or better than prior methods on ImageNet-1k and fine-grained datasets, at lower cost than the original method.</p>
+              <div class="paper-links">
+                <a href="https://openreview.net/forum?id=Mb2nn1yx66" aria-label="Paper: Rethinking Dataset Quantization on OpenReview">OpenReview <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/YangzeLiu/DQ_v2" aria-label="Code for Rethinking Dataset Quantization">Code <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -165,7 +222,6 @@
         <div class="section-heading">
           <p class="eyebrow"><span class="section-number" aria-hidden="true">02</span> Background</p>
           <h2 id="background-heading">Experience &amp; education</h2>
-          <p>Research, education,<br> and service.</p>
           <a class="text-link" href="Yangze_Liu_CV.pdf">Full CV <span aria-hidden="true">↗</span></a>
         </div>
         <div class="section-content">
@@ -177,7 +233,7 @@
                 <h3>Shandong University</h3>
                 <p class="timeline-role">Full-time Research Assistant</p>
                 <p>Advised by Prof. Zhongyi Han</p>
-                <p class="timeline-description">Understanding what drives LLM agents’ behavior and building agents that can run safely in real environments.</p>
+                <p class="timeline-description">What drives LLM agents’ behavior, and how to build agents that act safely in real environments.</p>
               </div>
             </li>
             <li class="timeline-entry">
@@ -196,7 +252,7 @@
                 <h3>University of Illinois Urbana-Champaign</h3>
                 <p class="timeline-role">Research Assistant</p>
                 <p>Advised by Prof. Nishant Garg</p>
-                <p class="timeline-description">Led development of Crystal Vision, a VR and PC educational game adopted in CEE 300 to teach crystallography.</p>
+                <p class="timeline-description">Led development of Crystal Vision, a cross-platform VR and PC educational game built in Unreal Engine 5 and adopted in CEE 300 (Behavior of Materials) to teach crystallography. The project later received research funding for continued development.</p>
               </div>
             </li>
             <li class="timeline-entry timeline-entry--education">
@@ -204,8 +260,8 @@
               <div class="timeline-content">
                 <p class="timeline-kind">Education</p>
                 <h3>University of Illinois Urbana-Champaign</h3>
-                <p class="timeline-role">B.S. in Liberal Arts and Sciences</p>
-                <p>Computer Science + Philosophy</p>
+                <p class="timeline-role">B.S. in Liberal Arts and Sciences, Computer Science + Philosophy</p>
+                <p>GPA 3.77/4.0</p>
               </div>
             </li>
           </ol>
@@ -214,7 +270,7 @@
       </section>
     </main>
 
-    <footer><p>Yangze Liu <span aria-hidden="true">·</span> Updated <time datetime="2026-10-13">October 13, 2026</time></p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+    <footer><p>Yangze Liu <span aria-hidden="true">·</span> Updated <time datetime="2026-11-03">November 3, 2026</time></p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
   </div>
 </body>
 </html>
