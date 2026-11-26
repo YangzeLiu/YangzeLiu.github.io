@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20261126">
+  <link rel="stylesheet" href="styles.css?v=20261126b">
   <script src="theme.js?v=20261103"></script>
 </head>
 <body id="top">
@@ -51,71 +51,77 @@
 
     <main id="main" tabindex="-1">
 
-      <!-- Opening spread: who, where, and the one-sentence argument. -->
+      <!-- Opening block on the page grid: portrait in the rail, identity beside it, then the one-sentence argument. -->
       <section class="intro" aria-labelledby="name">
         <div class="identity" id="contact">
-          <img class="portrait" src="assets/yangze-liu.jpg" alt="Portrait of Yangze Liu" width="480" height="600" decoding="async">
-          <div class="identity-text">
-          <h1 id="name">Yangze Liu</h1>
-          <p class="affiliation">Full-time Research Assistant<br><strong>Shandong University</strong></p>
-          <p class="detail">Advised by Prof. Zhongyi Han</p>
-          <p class="detail">B.S. Computer Science + Philosophy<br>University of Illinois Urbana-Champaign, 2025</p>
-          <p class="applying">Applying to PhD programs for Fall 2027</p>
-          <a class="email" href="mailto:yangze.liu@outlook.com">yangze.liu@outlook.com</a>
-          <div class="profile-links">
-            <a class="cv-link" href="Yangze_Liu_CV.pdf">CV <span class="file-type">PDF</span> <span aria-hidden="true">↗</span></a>
-            <a href="https://github.com/YangzeLiu">GitHub <span aria-hidden="true">↗</span></a>
-            <a href="https://scholar.google.com/citations?user=J5UjM7EAAAAJ">Scholar <span aria-hidden="true">↗</span></a>
+          <div class="portrait-frame">
+            <img class="portrait" src="assets/yangze-liu.jpg" alt="Portrait of Yangze Liu" width="480" height="640" decoding="async">
           </div>
+          <div class="identity-head">
+            <h1 id="name">Yangze Liu</h1>
+            <p class="affiliation">Full-time Research Assistant, <strong>Shandong University</strong></p>
+            <p class="detail">Advised by Prof. Zhongyi Han</p>
+          </div>
+          <div class="identity-more">
+            <p class="detail"><span>B.S. Computer Science + Philosophy,</span> <span>University of Illinois Urbana-Champaign, 2025</span></p>
+            <p class="applying">Applying to PhD programs for Fall 2027</p>
+            <div class="profile-links">
+              <a class="cv-link" href="Yangze_Liu_CV.pdf">CV <span class="file-type">PDF</span> <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/YangzeLiu">GitHub <span aria-hidden="true">↗</span></a>
+              <a href="https://scholar.google.com/citations?user=J5UjM7EAAAAJ">Scholar <span aria-hidden="true">↗</span></a>
+              <a class="email" href="mailto:yangze.liu@outlook.com">yangze.liu@outlook.com</a>
+            </div>
           </div>
         </div>
 
         <div class="thesis">
           <p class="eyebrow">What I work on</p>
-          <p class="thesis-statement">When an agent’s score goes up, what actually <em>changed</em>?</p>
-          <p>A score can rise because the agent got better, or because of run-to-run noise and grading rules that have nothing to do with the agent. I use controlled experiments to tell these apart, then look for the mechanism behind the change that is real, so that we can build agents that act safely in real environments.</p>
+          <div class="thesis-body">
+            <p class="thesis-statement">When an agent’s score goes up, <span class="nowrap">what actually <em>changed</em>?</span></p>
+            <p>Sometimes the agent got better. Sometimes it is run-to-run noise, or a grading rule that has nothing to do with the agent. I run controlled experiments to find out which, and when the change is real I look for what caused it. The goal is to build agents that act safely in real environments.</p>
+          </div>
         </div>
       </section>
 
-      <!-- The five agent papers as five questions. Top row: is the measured change real. Bottom row: what drives the behavior. -->
+      <!-- The five agent papers as five questions, one row each, in the order of the paper list below. -->
       <section class="questions" aria-labelledby="questions-heading">
         <h2 id="questions-heading" class="questions-heading">Five questions, one line of work</h2>
-        <ol class="question-grid" role="list">
-            <li class="question">
-              <a href="#paper-harness">
-                <span class="question-step">Harness</span>
-                <span class="question-text">A new harness raises a coding agent’s pass rate. Is the gain any larger than rerunning the same setup?</span>
-                <span class="question-paper">What Does a Harness Buy? <span class="status">Under review, ICLR 2027</span></span>
-              </a>
-            </li>
-            <li class="question">
-              <a href="#paper-leaderboards">
-                <span class="question-step">Leaderboards</span>
-                <span class="question-text">One agent trails another by 13 points on a public leaderboard. Is the gap in the agent or in the grader?</span>
-                <span class="question-paper">Silent Instrument Errors <span class="status">arXiv preprint, 2026</span></span>
-              </a>
-            </li>
-            <li class="question">
-              <a href="#paper-openclawbench">
-                <span class="question-step">Process</span>
-                <span class="question-text">An agent passes its task. Did it act safely along the way?</span>
-                <span class="question-paper">OpenClawBench <span class="status status--accepted">NeurIPS 2026, poster</span></span>
-              </a>
-            </li>
-            <li class="question">
-              <a href="#paper-memory">
-                <span class="question-step">Memory</span>
-                <span class="question-text">An agent writes itself a memory from its own games. Does the useful knowledge in it come from the games, or from the model that wrote it?</span>
-                <span class="question-paper">Experience Is Not Knowledge <span class="status">Manuscript, 2026</span></span>
-              </a>
-            </li>
-            <li class="question">
-              <a href="#paper-asking">
-                <span class="question-step">Asking</span>
-                <span class="question-text">A one-line prompt raises an agent’s leaderboard score. Did its decisions get any better?</span>
-                <span class="question-paper">Asking Earns Nothing <span class="status">arXiv preprint, 2026</span></span>
-              </a>
-            </li>
+        <ol class="question-list" role="list">
+          <li class="question">
+            <a href="#paper-harness">
+              <span class="question-step">Harness</span>
+              <span class="question-text">Does a new harness move the pass rate more than a rerun?</span>
+              <span class="question-venue">Under review, ICLR 2027</span>
+            </a>
+          </li>
+          <li class="question">
+            <a href="#paper-leaderboards">
+              <span class="question-step">Leaderboards</span>
+              <span class="question-text">Is a leaderboard gap in the agent, or in the grader?</span>
+              <span class="question-venue">arXiv preprint, 2026</span>
+            </a>
+          </li>
+          <li class="question">
+            <a href="#paper-openclawbench">
+              <span class="question-step">Process</span>
+              <span class="question-text">An agent passes its task. Did it act safely along the way?</span>
+              <span class="question-venue question-venue--accepted">NeurIPS 2026, poster</span>
+            </a>
+          </li>
+          <li class="question">
+            <a href="#paper-memory">
+              <span class="question-step">Memory</span>
+              <span class="question-text">Where does the knowledge in an agent’s memory come from?</span>
+              <span class="question-venue">Manuscript, 2026</span>
+            </a>
+          </li>
+          <li class="question">
+            <a href="#paper-asking">
+              <span class="question-step">Asking</span>
+              <span class="question-text">Does a prompt that raises the score improve the decisions?</span>
+              <span class="question-venue">arXiv preprint, 2026</span>
+            </a>
+          </li>
         </ol>
       </section>
 
@@ -273,7 +279,7 @@
       </section>
     </main>
 
-    <footer><p>Yangze Liu <span aria-hidden="true">·</span> Updated <time datetime="2026-11-03">November 3, 2026</time></p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+    <footer><p>Yangze Liu <span aria-hidden="true">·</span> Updated <time datetime="2026-11-26">November 26, 2026</time></p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
   </div>
 </body>
 </html>

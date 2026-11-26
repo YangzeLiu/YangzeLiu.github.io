@@ -77,42 +77,44 @@ nav a:hover { color: var(--accent); text-decoration: underline; }
   :root:not([data-theme="light"]) .theme-toggle .moon { display: none; }
 }
 
-/* Opening spread: identity on the left, the argument on the right. */
-.intro { display: grid; grid-template-columns: 488px minmax(0, 1fr); gap: 44px; padding-block: 52px 40px; }
-.identity { display: flex; align-items: flex-start; gap: 28px; }
-.identity-text { flex: 1 1 0; min-width: 0; }
-.portrait { display: block; flex: 0 0 172px; width: 172px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-top: 6px; border-radius: 6px; border: 1px solid var(--rule); background: var(--surface); }
-h1 { font: 400 3rem/1.1 var(--serif); letter-spacing: -0.03em; margin-bottom: 14px; }
-.affiliation { font-size: 0.9375rem; line-height: 1.6; }
-.detail { margin-top: 8px; font-size: 0.875rem; line-height: 1.6; color: var(--muted); }
-.applying { display: inline-block; margin-block: 14px 14px; padding: 3px 10px; border: 1px solid var(--accent); border-radius: 999px; color: var(--accent); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01em; }
-.email { display: block; font-size: 0.9375rem; overflow-wrap: anywhere; }
-.profile-links { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 12px; font-size: 0.875rem; }
+/* Opening block, set on the same rail-and-column grid as the sections below.
+   The portrait fills the rail and spans exactly from the name to the links; the argument follows with its label in the rail. */
+.intro { padding-block: 48px 46px; }
+.identity { display: grid; grid-template-columns: 200px minmax(0, 1fr); grid-template-rows: auto 1fr; grid-template-areas: "portrait head" "portrait more"; column-gap: 48px; min-height: 250px; scroll-margin-top: 24px; }
+.portrait-frame { grid-area: portrait; position: relative; overflow: hidden; border-radius: 6px; border: 1px solid var(--rule); background: var(--surface); }
+.portrait { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+.identity-head { grid-area: head; }
+.identity-more { grid-area: more; display: flex; flex-direction: column; align-items: flex-start; }
+h1 { font: 400 3.25rem/1.05 var(--serif); letter-spacing: -0.03em; margin-top: -0.16em; margin-bottom: 14px; }
+.affiliation { font-size: 1.0625rem; line-height: 1.5; }
+.affiliation strong, .detail span { white-space: nowrap; }
+.detail { margin-top: 5px; font-size: 0.9375rem; line-height: 1.6; color: var(--muted); }
+.identity-more .detail { margin-top: 2px; }
+.applying { display: inline-block; margin-block: 16px 14px; padding: 3px 11px; border: 1px solid var(--accent); border-radius: 999px; color: var(--accent); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01em; }
+.profile-links { display: flex; align-items: center; flex-wrap: wrap; gap: 0 22px; margin-top: auto; font-size: 0.9375rem; }
 .profile-links a { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; }
-.profile-links .cv-link { padding-inline: 13px; gap: 8px; border-radius: 3px; background: var(--accent); color: var(--button-text); text-decoration: none; }
+.profile-links .cv-link { padding-inline: 14px; gap: 8px; border-radius: 3px; background: var(--accent); color: var(--button-text); text-decoration: none; }
 .profile-links .cv-link:hover { background: var(--accent-hover); }
+.profile-links .email { overflow-wrap: anywhere; }
 .file-type { font-size: 0.6875rem; letter-spacing: 0.03em; }
 .eyebrow { font-size: 0.75rem; line-height: 1.5; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.thesis { padding-top: 4px; }
-.thesis-statement { font: 400 2.125rem/1.25 var(--serif); letter-spacing: -0.02em; margin-block: 12px 18px; text-wrap: pretty; }
+.thesis { display: grid; grid-template-columns: 200px minmax(0, 1fr); column-gap: 48px; align-items: baseline; margin-top: 46px; }
+.thesis-statement { font: 400 2.125rem/1.22 var(--serif); letter-spacing: -0.02em; margin-bottom: 16px; text-wrap: pretty; }
+.nowrap { white-space: nowrap; }
 .thesis-statement em { color: var(--accent); }
-.thesis > p:not(.eyebrow):not(.thesis-statement) { max-width: 62ch; font-size: 1.0625rem; line-height: 1.7; }
-.thesis > p + p:not(.thesis-statement) { margin-top: 12px; }
+.thesis-body > p:not(.thesis-statement) { max-width: 63.5ch; font-size: 1.0625rem; line-height: 1.7; }
 
-/* Five questions in two rows (three, then two), each card pointing to its paper. */
-.questions { padding-block: 8px 48px; }
-.questions-heading { font: 600 0.8125rem/1.5 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-.question-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
-.question { grid-column: span 2; }
-.question:nth-child(n+4) { grid-column: span 3; }
-.question a { display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 18px 18px 16px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); color: var(--text); text-decoration: none; }
-.question a:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--text); }
-.question-step { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
-.step-number { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: var(--button-text); font-size: 0.75rem; font-weight: 600; letter-spacing: 0; font-variant-numeric: tabular-nums; }
-.question-text { font: 400 1.0625rem/1.4 var(--serif); text-wrap: pretty; }
-.question-paper { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 0.8125rem; font-weight: 600; line-height: 1.5; }
-.question-paper .status { display: inline-block; margin-top: 4px; font-weight: 400; color: var(--muted); }
-.question a:hover .question-paper { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.2em; }
+/* Five questions as a quiet index on the same grid: label in the rail, question in the column, venue at the right edge. Each row points to its paper. */
+.questions { padding-block: 30px 30px; border-top: 1px solid var(--rule); }
+.questions-heading { margin: 0 0 14px; font: 600 0.75rem/1.5 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.question-list { list-style: none; margin: 0; padding: 0; }
+.question a { position: relative; display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; grid-template-areas: "step text venue"; column-gap: 48px; align-items: baseline; padding-block: 10px; color: var(--text); text-decoration: none; }
+.question + .question a::before { content: ""; position: absolute; top: 0; right: 0; left: 248px; border-top: 1px solid var(--rule); }
+.question-step { grid-area: step; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.question-text { grid-area: text; font: 400 1.0625rem/1.4 var(--serif); text-wrap: pretty; }
+.question-venue { grid-area: venue; font-size: 0.8125rem; line-height: 1.5; color: var(--muted); white-space: nowrap; text-align: right; }
+.question-venue--accepted { color: var(--accent); font-weight: 600; }
+.question a:hover .question-text { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 
 /* Section rail on the left, content on the right. */
 .section-grid { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; padding-block: 40px 48px; border-top: 1px solid var(--rule); }
@@ -182,31 +184,38 @@ footer p span { margin-inline: 6px; }
 footer a { display: inline-flex; gap: 8px; min-height: 44px; align-items: center; }
 
 @media (max-width: 1000px) {
-  .intro { grid-template-columns: minmax(0, 1fr); gap: 36px; }
-  .identity { gap: 28px; }
-  .portrait { flex-basis: 168px; width: 168px; }
-  h1 { font-size: 2.75rem; }
+  .identity, .thesis { grid-template-columns: 170px minmax(0, 1fr); column-gap: 32px; }
+  .identity { min-height: 213px; }
+  h1 { font-size: 3rem; }
   .thesis-statement { font-size: 1.875rem; }
-  .question-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .question, .question:nth-child(n+4) { grid-column: auto; }
-  .question:last-child { grid-column: 1 / -1; }
+  .question a { grid-template-columns: 170px minmax(0, 1fr); grid-template-areas: "step text" "venue text"; column-gap: 32px; }
+  .question + .question a::before { left: 202px; }
+  .question-venue { text-align: left; }
   .section-grid { grid-template-columns: 170px minmax(0, 1fr); gap: 32px; }
-  .profile-links { gap: 14px; }
+  .profile-links { column-gap: 18px; }
 }
 
 @media (max-width: 760px) {
   .page { max-width: 680px; padding-inline: 24px; }
   .site-header { min-height: 68px; }
   nav { gap: 14px; }
-  .intro { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 30px 28px; }
-  .identity { display: block; }
-  .portrait { float: right; width: 104px; margin: 4px 0 12px 16px; }
-  h1 { font-size: 2.5rem; margin-bottom: 12px; }
-  .profile-links { margin-top: 8px; gap: 20px; }
-  .thesis { padding-top: 0; }
+  .intro { padding-block: 28px 32px; }
+  .identity { grid-template-columns: 112px minmax(0, 1fr); grid-template-rows: auto auto; grid-template-areas: "portrait head" "more more"; align-items: center; column-gap: 20px; row-gap: 16px; min-height: 0; }
+  .portrait-frame { aspect-ratio: 3 / 4; }
+  h1 { font-size: 2.375rem; margin-top: 0; margin-bottom: 8px; }
+  .affiliation { font-size: 1rem; }
+  .detail { margin-top: 3px; font-size: 0.875rem; }
+  .identity-more .detail { margin-top: 0; }
+  .applying { margin-block: 12px 10px; }
+  .profile-links { margin-top: 0; column-gap: 20px; }
+  .thesis { display: block; margin-top: 26px; }
   .thesis-statement { font-size: 1.625rem; margin-block: 8px 12px; }
-  .thesis > p:not(.eyebrow):not(.thesis-statement) { font-size: 1rem; line-height: 1.7; }
-  .questions { padding-block: 4px 36px; }
+  .thesis-body > p:not(.thesis-statement) { font-size: 1rem; line-height: 1.7; }
+  .questions { padding-block: 26px 22px; }
+  .questions-heading { margin-bottom: 6px; }
+  .question a { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "step venue" "text text"; column-gap: 16px; row-gap: 3px; padding-block: 12px; }
+  .question + .question a::before { left: 0; }
+  .question-venue { text-align: right; }
   .section-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 30px 36px; }
   .section-heading { position: static; }
   .section-heading h2 { margin-block: 7px 9px; }
@@ -224,13 +233,13 @@ footer a { display: inline-flex; gap: 8px; min-height: 44px; align-items: center
 }
 
 @media (max-width: 520px) {
-  .portrait { width: 96px; margin-left: 14px; }
+  .identity { grid-template-columns: 100px minmax(0, 1fr); column-gap: 18px; }
+  h1 { font-size: 2.125rem; }
+  .affiliation { font-size: 0.9375rem; }
   .page { padding-inline: 20px; }
   .site-header { gap: 8px; }
   nav { gap: 10px; font-size: 0.8125rem; }
   .monogram { font-size: 1.375rem; }
-  .question-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-  .question a { padding: 14px 16px 12px; }
   .paper h3 { font-size: 1.125rem; }
   .timeline-entry { display: block; padding-left: 22px; padding-bottom: 28px; }
   .timeline-entry::before { left: 3px; }
@@ -242,10 +251,17 @@ footer a { display: inline-flex; gap: 8px; min-height: 44px; align-items: center
   footer { align-items: flex-start; }
 }
 
+/* On narrow phones the header keeps to one line; the contact details are already on the first screen. */
+@media (max-width: 400px) {
+  nav a[href="#contact"] { display: none; }
+}
+
 @media (max-width: 360px) {
   .page { padding-inline: 16px; }
   nav { gap: 8px; }
-  .profile-links { gap: 16px; }
+  .thesis-statement { font-size: 1.5rem; }
+  .identity { grid-template-columns: 92px minmax(0, 1fr); column-gap: 14px; }
+  .profile-links { column-gap: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -254,8 +270,7 @@ footer a { display: inline-flex; gap: 8px; min-height: 44px; align-items: center
 }
 
 @media (forced-colors: active) {
-  .profile-links .cv-link, .theme-toggle, .figure-link, .question a, .status, .applying { border: 1px solid ButtonText; }
-  .step-number { border: 1px solid ButtonText; }
+  .profile-links .cv-link, .theme-toggle, .figure-link, .portrait-frame, .status, .applying { border: 1px solid ButtonText; }
   :where(a, button):focus-visible { outline-color: Highlight; }
 }
 
@@ -266,21 +281,24 @@ footer a { display: inline-flex; gap: 8px; min-height: 44px; align-items: center
   body { background: #fff; line-height: 1.5; }
   .page { max-width: none; padding: 0; }
   .site-header, .skip-link, footer a, .paper-figure figcaption > a { display: none; }
-  .intro { grid-template-columns: 290px minmax(0, 1fr); gap: 24px; padding-block: 0 16px; }
-  .identity { gap: 14px; }
-  .portrait { flex-basis: 76px; width: 76px; margin-top: 2px; }
-  h1 { font-size: 26pt; }
-  .thesis-statement { font-size: 17pt; }
-  .thesis > p:not(.eyebrow):not(.thesis-statement) { font-size: 10pt; line-height: 1.5; }
-  .applying { border-color: #111; }
-  .profile-links { gap: 12px; margin-top: 8px; }
+  .intro { padding-block: 0 14px; }
+  .identity, .thesis { grid-template-columns: 112px minmax(0, 1fr); column-gap: 18px; }
+  .identity { grid-template-rows: auto 1fr; grid-template-areas: "portrait head" "portrait more"; align-items: stretch; min-height: 140px; }
+  .portrait-frame { aspect-ratio: auto; }
+  h1 { font-size: 26pt; margin-top: -0.16em; margin-bottom: 6px; }
+  .affiliation, .detail { font-size: 10pt; }
+  .thesis { display: grid; margin-top: 16px; }
+  .thesis-statement { font-size: 17pt; margin-block: 0 8px; }
+  .thesis-body > p:not(.thesis-statement) { font-size: 10pt; line-height: 1.5; }
+  .applying { margin-block: 8px 6px; border-color: #111; }
+  .profile-links { gap: 0 14px; margin-top: auto; font-size: 10pt; }
   .profile-links a, .profile-links .cv-link { min-height: 0; padding: 0; color: #111; background: transparent; }
-  .questions { padding-block: 0 16px; }
-  .question-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .question, .question:nth-child(n+4) { grid-column: auto; }
-  .question:last-child { grid-column: 1 / -1; }
-  .question a { padding: 8px 10px; border-color: #ccc; }
-  .step-number { background: #111; }
+  .questions { padding-block: 12px 12px; break-inside: avoid; }
+  .questions-heading { margin-bottom: 6px; }
+  .question a { grid-template-columns: 112px minmax(0, 1fr) auto; grid-template-areas: "step text venue"; column-gap: 18px; row-gap: 0; padding-block: 4px; }
+  .question + .question a::before { left: 130px; }
+  .question-venue { text-align: right; }
+  .question-text { font-size: 10.5pt; }
   .section-grid { display: block; padding-block: 16px; }
   .section-heading { position: static; margin-bottom: 12px; break-after: avoid; }
   .section-heading h2 { margin-block: 5px; font-size: 18pt; }
